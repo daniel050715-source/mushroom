@@ -26,3 +26,13 @@
 ### 1. 安裝套件
 ```bash
 pip install ultralytics torch opencv-python
+```
+
+### 2. 執行影像偵測（推論）
+```bash
+yolo detect predict model=best.pt source="你的測試圖片資料夾路徑" imgsz=640 conf=0.6 save=True
+```
+
+## 🔮 未來優化方向
+* **混合光源資料集擴充**：聯合訓練「有結構光」與「無結構光」香菇樣本，並加入純背景負樣本以消除背景條紋誤判。
+* **多類別品質分級**：擴展偵測類別為「正常（Normal）、未熟（Immature）、裂紋（Cracked）」，並導入即時影像串流部署。
